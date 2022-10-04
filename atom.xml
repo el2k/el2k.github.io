@@ -6,7 +6,7 @@
   <link href="http://el2k.github.io/atom.xml" rel="self"/>
   
   <link href="http://el2k.github.io/"/>
-  <updated>2022-09-29T14:31:43.621Z</updated>
+  <updated>2022-10-04T05:59:00.238Z</updated>
   <id>http://el2k.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法 仿函数 配接器</title>
+    <link href="http://el2k.github.io/2022/10/04/suan-fa-fang-han-shu-he-pei-jie-qi/"/>
+    <id>http://el2k.github.io/2022/10/04/suan-fa-fang-han-shu-he-pei-jie-qi/</id>
+    <published>2022-10-04T05:45:14.272Z</published>
+    <updated>2022-10-04T05:59:00.238Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;算法&quot;&gt;&lt;a href=&quot;#算法&quot; class=&quot;headerlink&quot; title=&quot;算法&quot;&gt;&lt;/a&gt;算法&lt;/h1&gt;&lt;h2 id=&quot;数值算法&quot;&gt;&lt;a href=&quot;#数值算法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
