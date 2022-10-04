@@ -8,7 +8,7 @@
       <link href="/2022/10/04/effectivec/"/>
       <url>/2022/10/04/effectivec/</url>
       
-        <content type="html"><![CDATA[<h1 id="Effective-C"><a href="#Effective-C" class="headerlink" title="Effective  C++"></a>Effective  C++</h1><p>序言：</p><p>这篇文章主要记录学习Effective C++这本书的过程中，有所体会有所感悟的地方。</p><p>如果有错误，欢迎读者指正！</p><p><img src="/2022/10/04/effectivec/wallhaven-gpzve7_1920x1080.png"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Effective-C"><a href="#Effective-C" class="headerlink" title="Effective  C++"></a>Effective  C++</h1><p>序言：</p><p>这篇文章主要记录学习Effective C++这本书的过程中，有所体会有所感悟的地方。</p><p>如果有错误，欢迎读者指正！</p><p><img src="/2022/10/04/effectivec/wallhaven-gpzve7_1920x1080.png"></p><h3 id="mutable"><a href="#mutable" class="headerlink" title="mutable"></a>mutable</h3><p>class test{</p><p>mutable bool length ;</p><p>} //这些成员变量可能总是会被更改，即使在const成员函数内</p><p>mutable释放掉non_static成员变量的bitwise constness约束</p><h3 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h3><p>将non-const对象转为const对象</p><p>static_cast&lt;const TestBlock&amp;&gt;(*this)[position];</p>]]></content>
       
       
       
