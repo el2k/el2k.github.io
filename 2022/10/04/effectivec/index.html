@@ -397,7 +397,7 @@ mutable bool length ;
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    102
+                    278
                 </div>
                 
 
@@ -424,6 +424,13 @@ mutable bool length ;
 <p>mutable释放掉non_static成员变量的bitwise constness约束</p>
 <h3 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h3><p>将non-const对象转为const对象</p>
 <p>static_cast&lt;const TestBlock&amp;&gt;(*this)[position];</p>
+<h3 id="确定对象被使用前已先被初始化"><a href="#确定对象被使用前已先被初始化" class="headerlink" title="确定对象被使用前已先被初始化"></a>确定对象被使用前已先被初始化</h3><p>为内置型对象进行手工初始化，因为C++不保证初始化他们</p>
+<p>总是使用成员初始列，这样做有时候绝对必要，且又往往比赋值更加高效</p>
+<p>当你在成员初值列中条列各个成员时，最好总是以其声明次序为次序</p>
+<h3 id="解决“跨编译单元之初始化次序”问题"><a href="#解决“跨编译单元之初始化次序”问题" class="headerlink" title="解决“跨编译单元之初始化次序”问题"></a>解决“跨编译单元之初始化次序”问题</h3><p><img src="/2022/10/04/effectivec/fbdf151d82f7c84e6202b5c290dd261.jpg"></p>
+<p>使用local static对象代替non-local static对象</p>
+<p>将每个non-local static对象搬到自己的专属函数内</p>
+<p>函数内的local static对象会在“该函数被调用期间”“首次遇上该对象之定义式”时被初始化</p>
 
                 
             </div>
@@ -782,7 +789,7 @@ mutable bool length ;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.1k</span>
+                        class="white-color">7.3k</span>
             
             
             
