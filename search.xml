@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>EffectiveC++</title>
+      <link href="/2022/10/04/effectivec/"/>
+      <url>/2022/10/04/effectivec/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Effective-C"><a href="#Effective-C" class="headerlink" title="Effective  C++"></a>Effective  C++</h1><p>序言：</p><p>这篇文章主要记录学习Effective C++这本书的过程中，有所体会有所感悟的地方。</p><p>如果有错误，欢迎读者指正！</p><p><img src="/hexocodesource_postsEffectiveC/wallhaven-gpzve7_1920x1080.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法</title>
       <link href="/2022/10/04/suan-fa/"/>
       <url>/2022/10/04/suan-fa/</url>

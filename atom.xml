@@ -6,7 +6,7 @@
   <link href="http://el2k.github.io/atom.xml" rel="self"/>
   
   <link href="http://el2k.github.io/"/>
-  <updated>2022-10-04T06:13:51.677Z</updated>
+  <updated>2022-10-04T07:34:43.480Z</updated>
   <id>http://el2k.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EffectiveC++</title>
+    <link href="http://el2k.github.io/2022/10/04/effectivec/"/>
+    <id>http://el2k.github.io/2022/10/04/effectivec/</id>
+    <published>2022-10-04T07:21:06.000Z</published>
+    <updated>2022-10-04T07:34:43.480Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Effective-C&quot;&gt;&lt;a href=&quot;#Effective-C&quot; class=&quot;headerlink&quot; title=&quot;Effective  C++&quot;&gt;&lt;/a&gt;Effective </summary>
+        
+      
+    
+    
+    
+    
+    <category term="C++" scheme="http://el2k.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>算法</title>
