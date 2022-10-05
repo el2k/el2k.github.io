@@ -9,9 +9,8 @@
 这篇文章主要记录学习Effective C++这本书的过程中，有所体会有所感悟的地方。
 如果有错误，欢迎读者指正！
 
-mutableclass test{
-mutable bool length ;
-} ">
+构造，析构，赋值函数mutableclass test{
+mutable bool l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -397,7 +396,7 @@ mutable bool length ;
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    770
+                    1.1k
                 </div>
                 
 
@@ -418,7 +417,7 @@ mutable bool length ;
 <p>这篇文章主要记录学习Effective C++这本书的过程中，有所体会有所感悟的地方。</p>
 <p>如果有错误，欢迎读者指正！</p>
 <p><img src="/2022/10/04/effectivec/wallhaven-gpzve7_1920x1080.png"></p>
-<h3 id="mutable"><a href="#mutable" class="headerlink" title="mutable"></a>mutable</h3><p>class test{</p>
+<h2 id="构造，析构，赋值函数"><a href="#构造，析构，赋值函数" class="headerlink" title="构造，析构，赋值函数"></a>构造，析构，赋值函数</h2><h3 id="mutable"><a href="#mutable" class="headerlink" title="mutable"></a>mutable</h3><p>class test{</p>
 <p>mutable bool length ;</p>
 <p>} //这些成员变量可能总是会被更改，即使在const成员函数内</p>
 <p>mutable释放掉non_static成员变量的bitwise constness约束</p>
@@ -448,7 +447,25 @@ mutable bool length ;
 <p><img src="/2022/10/04/effectivec/44d3dd00ab84ab69d7c6a8b6ab83955.jpg"></p>
 <p>总的来说，就是一个虚函数基类和子类都有，然后都在父类在构造函数期间就调用了那个虚函数，导致本应调用子类的虚函数调用成父类，因为父类先构造，所以绝不要在构造和析构的过程中调用virtual函数</p>
 <h3 id="令赋值操作符返回一个reference-to-this"><a href="#令赋值操作符返回一个reference-to-this" class="headerlink" title="令赋值操作符返回一个reference  to *this"></a>令赋值操作符返回一个reference  to *this</h3><p>为了实现连环赋值，a=b=c;</p>
-<h3 id="在operator-x3D-中处理“自我赋值”"><a href="#在operator-x3D-中处理“自我赋值”" class="headerlink" title="在operator=中处理“自我赋值”"></a>在operator=中处理“自我赋值”</h3>
+<h3 id="在operator-x3D-中处理“自我赋值”"><a href="#在operator-x3D-中处理“自我赋值”" class="headerlink" title="在operator=中处理“自我赋值”"></a>在operator=中处理“自我赋值”</h3><p><strong>确保当对象自我赋值时，operator=有良好行为。其中技术包括比较“来源对象”和“目标对象”的地址、精心周到的语句顺序、以及copy-and-swap</strong></p>
+<p>1）if(this==&amp;rhs)return *this;//rhs为参数值,引用</p>
+<p>2)Bitmap*  pOrig=pb;</p>
+<p>pb=new Bitmap(*rhs.pb);</p>
+<p>delete pOrig;</p>
+<p>return *this;//rhs为参数值,引用</p>
+<p>3)swap(rhs);</p>
+<p>return *this;//rhs为参数值，实参</p>
+<p><strong>确保任何函数如果操作一个以上的对象，而其中多个对象是同一个对象时，其行为仍然正确</strong></p>
+<h3 id="复制对象时勿忘其每一个成分"><a href="#复制对象时勿忘其每一个成分" class="headerlink" title="复制对象时勿忘其每一个成分"></a>复制对象时勿忘其每一个成分</h3><p> <strong>Copying函数应该确保复制“对象内的所有成员变量”及“所有base class”成分</strong></p>
+<p><strong>不要尝试以某个copying函数实现另一个copying函数。应该将共同机能放进第三个函数中，并由两个coping函数共同调用</strong></p>
+<h2 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h2><h3 id="以对象管理资源"><a href="#以对象管理资源" class="headerlink" title="以对象管理资源"></a>以对象管理资源</h3><p>为确保返回的资源总是被释放，我们需要将资源放进对象内，当控制流离开删除函数，该对象的析构函数会自动释放那些资源</p>
+<p>许多资源被动态分配于heap内后被单一区块或函数内。它们应该在控制流离开那个区块或函数时被释放</p>
+<p>智能指针： auto_ptr 针对这种情况设计的特制产品</p>
+<p><img src="/2022/10/04/effectivec/e540b310df79e33870f0b1be2888f1b.jpg"></p>
+<p><img src="/2022/10/04/effectivec/0c8c230ec910bada5d2d2b7dea4c299.jpg"></p>
+<p><img src="/2022/10/04/effectivec/48d1cda35a00d1c1f8a62cd5735587f.jpg"></p>
+<p><img src="/2022/10/04/effectivec/090fdb7cc021733f01f49d73d3f9d0b.jpg"></p>
+<h3 id="在资源管理中小心copying行为"><a href="#在资源管理中小心copying行为" class="headerlink" title="在资源管理中小心copying行为"></a>在资源管理中小心copying行为</h3>
                 
             </div>
             <hr/>
@@ -806,7 +823,7 @@ mutable bool length ;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.8k</span>
+                        class="white-color">8.1k</span>
             
             
             
